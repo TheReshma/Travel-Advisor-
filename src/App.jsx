@@ -20,6 +20,7 @@ function App(){
     }, []);
 
     useEffect(()=>{
+        
         getPlacesData(bounds.sw, bounds.ne)
         .then((data)=>{
             setPlaces(data);
@@ -40,6 +41,7 @@ function App(){
                         setCoordinates={setCoordinates}
                         coordinates={coordinates}
                         setBounds={setBounds}
+                        places={places}
                     />
                 </Grid>
             </Grid>

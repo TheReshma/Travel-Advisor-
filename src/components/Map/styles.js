@@ -1,17 +1,14 @@
-import { styled } from '@mui/material/styles';
-import { Paper } from '@mui/material';
-
-const MapContainer = styled('div')(() => ({
-    height: '85vh', width: '100%',
-}));
-
-const StyledPaper = styled(Paper)(() => ({
+export const styles = {
+  paper: {
     padding: '10px', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100px',
-  }));
-
-const MarkerContainer = styled('div')(() => ({
+  },
+  mapContainer: {
+    height: '85vh', width: '100%',
+  },
+  markerContainer: {
     position: 'absolute', transform: 'translate(-50%, -50%)', zIndex: 1, '&:hover': { zIndex: 2 },
-  }));
-
-
-export {MapContainer, StyledPaper, MarkerContainer};
+  },
+  pointer: {
+    cursor: 'pointer',
+  },
+}
