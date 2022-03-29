@@ -12,9 +12,9 @@ You may also see any lint errors in the console.
 
 ### Prerequisites
 
-You must have a [https://developers.google.com/maps/documentation/javascript/overview](Google Maps Javascript API key) with Billing turned on. You must also enable the [https://developers.google.com/maps/documentation/places/web-service/overview](Places API). 
+You must have a [Google Maps Javascript API key](https://developers.google.com/maps/documentation/javascript/overview) with Billing turned on. You must also enable the [Places API](https://developers.google.com/maps/documentation/places/web-service/overview). 
 
-Subscribe to the [https://travel-advisor.p.rapidapi.com](Travel Advisor API) on [rapidapi.com](rapidapi.com) & get their 'X-RapidAPI-Key' .
+Subscribe to the  [Travel Advisor API](https://travel-advisor.p.rapidapi.com) on [rapidapi.com](rapidapi.com) & get their 'X-RapidAPI-Key' .
 
 ### Tech Stack Used 
 
