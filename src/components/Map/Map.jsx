@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { Typography, useMediaQuery , Rating, Paper, Container, Box } from '@mui/material';
 import { LocationOnOutlined } from '@mui/icons-material';
@@ -6,25 +6,29 @@ import { LocationOnOutlined } from '@mui/icons-material';
 
 import {styles} from './styles';
 
-function Map({setCoordinates, coordinates, setBounds, places}){
+function Map({setCoordinates, coordinates, setBounds, places, setChildClicked}){
     
     const classes = styles;
     const isDesktop = useMediaQuery('(min-width:600px)');
 
+
     return(
         <Container sx={classes.mapContainer}>
             <GoogleMapReact 
-            bootstrapURLKeys={{ key : 'AIzaSyBlKPLJvJ-hk4LvIn5d-dsju9LgXaKSWGQ' }}
+            bootstrapURLKeys={{ key : process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
             defaultCenter= {coordinates}
             center = {coordinates}
             defaultZoom = {8}
             margin = {[50, 50, 50, 50]}
+            yesIWantToUseGoogleMapApiInternals
             options = {''}
             onChange= {(e)=>{
                 setBounds({ne : e.marginBounds.ne , sw : e.marginBounds.sw});
                 setCoordinates({ lat: e.center.lat , lng: e.center.lng});
             }}
-            onChildClick={''}
+            onChildClick={ function (child){
+                return setChildClicked(child);
+            }}
             >
 
             {places?.map((place,i)=> (
@@ -32,7 +36,7 @@ function Map({setCoordinates, coordinates, setBounds, places}){
                     {
                         isDesktop ? (
                             <Paper elevation={3} sx={classes.paper}>
-                                <Typography variant='subtitle1'>
+                                <Typography variant='body1'>
                                     {place.name}
                                 </Typography>
                                 <img

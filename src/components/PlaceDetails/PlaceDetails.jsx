@@ -6,10 +6,11 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import {styles} from './styles';
 
 
-function PlaceDetails({place}){
+function PlaceDetails({place, selected, refProps }){
 
     const classes = styles;
 
+    if(selected){ refProps?.current?.scrollIntoView( { behaviour : "smooth", block : "start"})}
 
     return(
         <Card elevation={6}>
